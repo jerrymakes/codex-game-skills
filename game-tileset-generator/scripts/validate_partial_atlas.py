@@ -7,6 +7,10 @@ import json
 from pathlib import Path
 
 from PIL import Image
+from partial_alpha import color_distance, is_purple_spill
+
+
+CHROMA_EDGE_DISTANCE_FAIL = 90.0
 
 
 def parse_args() -> argparse.Namespace:
@@ -49,9 +53,35 @@ def relpath_or_abs(path: Path, root: Path | None) -> str:
         return str(path.resolve())
 
 
+def chroma_spill_stats(img: Image.Image, key_rgb: tuple[int, int, int]) -> dict[str, int]:
+    rgba = img.convert("RGBA")
+    semi_transparent_count = 0
+    suspicious_edge_count = 0
+
+    for y in range(rgba.height):
+        for x in range(rgba.width):
+            r, g, b, a = rgba.getpixel((x, y))
+            if a <= 0 or a >= 255:
+                continue
+            semi_transparent_count += 1
+            rgb = (r, g, b)
+            if color_distance(rgb, key_rgb) <= CHROMA_EDGE_DISTANCE_FAIL or is_purple_spill(rgb):
+                suspicious_edge_count += 1
+
+    return {
+        "semi_transparent_count": semi_transparent_count,
+        "suspicious_edge_count": suspicious_edge_count,
+    }
+
+
 def validate_tile(obj: dict, tile_path: Path, tile_size: int, run_root: Path | None) -> dict:
     issues: list[str] = []
     img = Image.open(tile_path).convert("RGBA")
+    key_hex = obj.get("chroma_key")
+    if key_hex is None:
+        key_rgb = (255, 0, 255)
+    else:
+        key_rgb = tuple(int(key_hex[i:i + 2], 16) for i in (1, 3, 5))
     expected_size = (obj["span"]["w"] * tile_size, obj["span"]["h"] * tile_size)
     if img.size != expected_size:
         issues.append(f"tile-size-mismatch:{img.size}!={expected_size}")
@@ -63,6 +93,9 @@ def validate_tile(obj: dict, tile_path: Path, tile_size: int, run_root: Path | N
         issues.append("empty-partial-tile")
     if alpha_min == 255:
         issues.append("missing-transparency")
+    spill = chroma_spill_stats(img, key_rgb)
+    if spill["suspicious_edge_count"] > 0:
+        issues.append("chroma-spill-edge")
 
     return {
         "id": obj["id"],
@@ -76,6 +109,7 @@ def validate_tile(obj: dict, tile_path: Path, tile_size: int, run_root: Path | N
             "right": visible_bbox[2],
             "bottom": visible_bbox[3],
         },
+        "chroma_spill": spill,
         "issues": issues,
     }
 
@@ -89,6 +123,7 @@ def main() -> None:
         raise SystemExit("validate_partial_atlas.py only supports sheet.layout_style == 'partial'")
 
     tile_size = spec["sheet"]["tile_size"]
+    chroma_key = spec["sheet"].get("chroma_key", "#FF00FF")
     review = {
         "ok": True,
         "spec_path": relpath_or_abs(spec_path, run_root),
@@ -104,7 +139,7 @@ def main() -> None:
             review["tiles"].append({"id": obj["id"], "label": obj["label"], "tile_path": relpath_or_abs(tile_path, run_root), "issues": ["missing-tile"]})
             continue
 
-        tile_review = validate_tile(obj, tile_path, tile_size, run_root)
+        tile_review = validate_tile({**obj, "chroma_key": chroma_key}, tile_path, tile_size, run_root)
         review["tiles"].append(tile_review)
         if tile_review["issues"]:
             review["ok"] = False

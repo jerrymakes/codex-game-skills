@@ -30,12 +30,12 @@ DEFAULT_CHROMA_KEY = "#FF00FF"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Validate and normalize an AI-authored tileset spec."
+        description="Validate and normalize a tileset spec input."
     )
     parser.add_argument(
         "--input",
         required=True,
-        help="Path to an AI-authored tileset spec draft",
+        help="Path to a tileset spec input",
     )
     parser.add_argument(
         "--output",

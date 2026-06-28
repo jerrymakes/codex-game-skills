@@ -18,7 +18,7 @@ def parse_args() -> argparse.Namespace:
         description="Prepare a tileset run folder from a tileset spec."
     )
     parser.add_argument("--run-dir", required=True, help="Output run directory")
-    parser.add_argument("--spec", required=True, help="Path to AI-authored tileset spec input")
+    parser.add_argument("--spec", required=True, help="Path to the confirmed tileset spec input")
     parser.add_argument("--request", help="Optional path to request.json to copy into the run folder")
     parser.add_argument("--force", action="store_true", help="Replace an existing run directory")
     return parser.parse_args()

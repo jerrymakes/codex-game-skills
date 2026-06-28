@@ -91,6 +91,8 @@ def build_positive_prompt(spec: dict, layout_style: str) -> str:
     if layout_style == "partial":
         header.insert(4, f"Use a perfectly flat solid {chroma_key} chroma-key background around and between objects where transparency is required.")
         header.insert(5, f"Do not use {chroma_key} inside the artwork itself.")
+        header.insert(6, "Do not tint anti-aliased edges, semi-transparent edge pixels, or contact shadows with the chroma-key color.")
+        header.insert(7, "Keep object edge colors neutral or true to the material, not magenta-fringed.")
         header.insert(10, "Keep each object smaller than the full tile area so empty transparent space remains around it.")
         header.insert(11, "Do not make partial objects fill the entire tile cell edge-to-edge.")
     else:
@@ -153,6 +155,8 @@ def build_negative_prompt(layout_style: str) -> str:
             "Do not make small-object cells read like full-cell filled surfaces unless explicitly intended.",
             "Do not spill artwork into neighboring cells or outside the assigned footprint.",
             "Do not remove the transparent space needed around smaller objects.",
+            "Do not leave magenta fringe, purple spill, or chroma-key contamination on semi-transparent edges.",
+            "Do not anti-alias object edges against the chroma-key background color.",
             "Do not add text, labels, grid marks, shadows outside cells, extra decoration, or any rounded outer frame.",
             "Do not merge separate objects into one continuous filled sheet.",
         ]

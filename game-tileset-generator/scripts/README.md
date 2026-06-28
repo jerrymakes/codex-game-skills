@@ -41,10 +41,12 @@ Different tileset types should add different stage implementations, not a differ
 
 ## Orchestration Rule
 
-- `prepare_tileset_spec.py` validates and normalizes an AI-authored spec draft
+- `prepare_tileset_spec.py` validates and normalizes a tileset spec input
+- after `tileset_spec.json` is generated, downstream runs should use that confirmed spec file directly
 - `prepare_tileset_run.py` writes the run folder and `imagegen-jobs.json`
 - workers read prompt/layout/spec paths from run artifacts
 - generation workers must attach the layout guide as a real reference image
+- generation workers return the chosen output path directly
 - the parent records a selected worker output with `complete_tileset_job.py`
 - `complete_tileset_job.py --run-postprocess` combines record + serialized postprocess
 - the parent then runs `process_tileset_run.py --run-dir <run-dir>`
