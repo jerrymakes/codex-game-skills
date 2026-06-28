@@ -1,0 +1,30 @@
+# macOS system files
+.DS_Store
+._*
+
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local generation sources and scratch artifacts
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Local environment and editor files
+.env
+.env.*
+.idea/
+.vscode/
+
+# Windows system files
+Thumbs.db

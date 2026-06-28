@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+SKILLS_DEST="${CODEX_HOME}/skills"
+
+usage() {
+  cat <<EOF
+Usage:
+  $(basename "$0") list
+  $(basename "$0") [--symlink] [--all | <skill-name>...]
+
+Commands:
+  list      Show installable skills in this repository.
+
+Options:
+  --symlink Create a symlink instead of copying the skill directory.
+  --all     Install all detected skills.
+
+Existing installations are replaced automatically.
+
+Examples:
+  $(basename "$0") list
+  $(basename "$0") game-tileset-generator
+  $(basename "$0") --all
+  $(basename "$0") --symlink game-tileset-generator
+  $(basename "$0") --all --symlink
+EOF
+}
+
+discover_skills() {
+  local dir
+
+  for dir in "$SCRIPT_DIR"/*; do
+    if [ -d "$dir" ] && [ -f "$dir/SKILL.md" ]; then
+      basename "$dir"
+    fi
+  done | sort
+}
+
+print_skills() {
+  local skills
+
+  skills="$(discover_skills)"
+  if [ -z "$skills" ]; then
+    echo "No installable skills found in $SCRIPT_DIR" >&2
+    return 1
+  fi
+
+  echo "Installable skills:"
+  printf '%s\n' "$skills"
+}
+
+install_one_skill() {
+  local skill_name="$1"
+  local mode="$2"
+  local source_dir="${SCRIPT_DIR}/${skill_name}"
+  local dest_dir="${SKILLS_DEST}/${skill_name}"
+  local staged_dir="${SKILLS_DEST}/.${skill_name}.install.$$"
+
+  if [ "$skill_name" != "$(basename "$skill_name")" ]; then
+    echo "Invalid skill name: $skill_name" >&2
+    return 1
+  fi
+
+  if [ ! -d "$source_dir" ]; then
+    echo "Skill not found: $skill_name" >&2
+    echo "Expected directory: $source_dir" >&2
+    return 1
+  fi
+
+  if [ ! -f "${source_dir}/SKILL.md" ]; then
+    echo "Invalid skill: ${source_dir}/SKILL.md is missing." >&2
+    return 1
+  fi
+
+  rm -rf -- "$staged_dir"
+
+  if [ "$mode" = "copy" ]; then
+    cp -R "$source_dir" "$staged_dir"
+  else
+    ln -s "$source_dir" "$staged_dir"
+  fi
+
+  if [ -e "$dest_dir" ] || [ -L "$dest_dir" ]; then
+    rm -rf -- "$dest_dir"
+    echo "Replaced existing $skill_name installation."
+  fi
+
+  mv "$staged_dir" "$dest_dir"
+
+  if [ "$mode" = "copy" ]; then
+    echo "Copied $skill_name to $dest_dir"
+  else
+    echo "Linked $skill_name to $dest_dir"
+  fi
+}
+
+if [ "${1:-}" = "" ] || [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  usage
+  exit 0
+fi
+
+MODE="copy"
+INSTALL_ALL="false"
+COMMAND=""
+SKILL_NAMES=()
+
+for arg in "$@"; do
+  case "$arg" in
+    list)
+      if [ -n "$COMMAND" ] || [ "${#SKILL_NAMES[@]}" -gt 0 ] || [ "$INSTALL_ALL" = "true" ]; then
+        echo "The list command cannot be combined with other arguments." >&2
+        usage >&2
+        exit 1
+      fi
+      COMMAND="list"
+      ;;
+    --symlink)
+      MODE="symlink"
+      ;;
+    --all)
+      INSTALL_ALL="true"
+      ;;
+    -*)
+      echo "Unknown option: $arg" >&2
+      usage >&2
+      exit 1
+      ;;
+    *)
+      if [ -n "$COMMAND" ]; then
+        echo "The list command cannot be combined with skill names." >&2
+        usage >&2
+        exit 1
+      fi
+      SKILL_NAMES+=("$arg")
+      ;;
+  esac
+done
+
+if [ "$COMMAND" = "list" ]; then
+  print_skills
+  exit 0
+fi
+
+if [ "$INSTALL_ALL" = "true" ] && [ "${#SKILL_NAMES[@]}" -gt 0 ]; then
+  echo "Use either --all or explicit skill names, not both." >&2
+  usage >&2
+  exit 1
+fi
+
+if [ "$INSTALL_ALL" = "true" ]; then
+  while IFS= read -r skill_name; do
+    SKILL_NAMES+=("$skill_name")
+  done < <(discover_skills)
+fi
+
+if [ "${#SKILL_NAMES[@]}" -eq 0 ]; then
+  echo "Missing skill name." >&2
+  usage >&2
+  exit 1
+fi
+
+mkdir -p "$SKILLS_DEST"
+
+for skill_name in "${SKILL_NAMES[@]}"; do
+  install_one_skill "$skill_name" "$MODE"
+done
+
+echo "Restart Codex to pick up the new skill changes."
