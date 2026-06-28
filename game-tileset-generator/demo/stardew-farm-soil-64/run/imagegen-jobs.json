@@ -1,0 +1,49 @@
+{
+  "jobs": [
+    {
+      "id": "atlas",
+      "kind": "atlas-generation",
+      "status": "postprocessed",
+      "spec_path": "tileset_spec.json",
+      "request_file": "references/imagegen-request.json",
+      "input_images": [
+        {
+          "path": "references/layout-guide.png",
+          "role": "layout-guide",
+          "usage": "layout-only",
+          "required": true
+        }
+      ],
+      "required_reference_roles": [
+        "layout-guide"
+      ],
+      "requires_layout_reference": true,
+      "output_path": "decoded/atlas-candidate.png",
+      "layout_style": "full",
+      "layout_preset": "terrain-basic",
+      "view": "top-down",
+      "atlas_content": "terrain",
+      "tile_size": 64,
+      "grid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "qa_note": "Initial Stardew-inspired soil atlas candidate selected.",
+      "completed_at": "2026-06-28T16:11:13Z",
+      "selected_source": "/Users/juewei/.codex/generated_images/019f0efb-44e4-78f0-a7fc-623a2f9c0e7a/ig_0b5108c210aed1a8016a4147305860819985b93439738c0a86.png",
+      "copied_output_path": "decoded/atlas-candidate.png",
+      "copied_output_size_px": {
+        "width": 1448,
+        "height": 1086
+      },
+      "postprocess": {
+        "candidate_review_path": "qa/candidate-review.json",
+        "candidate_ok": true,
+        "tile_review_path": "qa/review.json",
+        "tile_ok": true,
+        "final_atlas_path": "final/atlas.png",
+        "composed": true
+      }
+    }
+  ]
+}

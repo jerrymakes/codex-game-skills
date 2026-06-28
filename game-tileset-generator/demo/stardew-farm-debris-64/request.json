@@ -1,0 +1,6 @@
+{
+  "project": "stardew-farm-debris-64",
+  "style_target": "Stardew Valley inspired farm debris placed-object atlas",
+  "summary": "Generate a top-down pixel-art placed-object atlas for removable farm debris with 12 single-tile clutter objects such as weeds, twigs, branches, stones, and mixed field junk.",
+  "user_request_language": "zh-CN"
+}

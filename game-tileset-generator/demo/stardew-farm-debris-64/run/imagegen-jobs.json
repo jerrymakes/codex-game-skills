@@ -1,0 +1,49 @@
+{
+  "jobs": [
+    {
+      "id": "atlas",
+      "kind": "atlas-generation",
+      "status": "qa-failed",
+      "spec_path": "tileset_spec.json",
+      "request_file": "references/imagegen-request.json",
+      "input_images": [
+        {
+          "path": "references/layout-guide.png",
+          "role": "layout-guide",
+          "usage": "layout-only",
+          "required": true
+        }
+      ],
+      "required_reference_roles": [
+        "layout-guide"
+      ],
+      "requires_layout_reference": true,
+      "output_path": "decoded/atlas-candidate.png",
+      "layout_style": "partial",
+      "layout_preset": "interior-basic",
+      "view": "top-down",
+      "atlas_content": "placed-object",
+      "tile_size": 64,
+      "grid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "qa_note": "Second candidate with harder pixel edges selected.",
+      "completed_at": "2026-06-28T16:18:32Z",
+      "selected_source": "/Users/juewei/.codex/generated_images/019f0efb-44e4-78f0-a7fc-623a2f9c0e7a/ig_0b0c23517acda149016a4148fc6bb8819b88cb2040225af34b.png",
+      "copied_output_path": "decoded/atlas-candidate.png",
+      "copied_output_size_px": {
+        "width": 1448,
+        "height": 1086
+      },
+      "postprocess": {
+        "candidate_review_path": "qa/candidate-review.json",
+        "candidate_ok": true,
+        "tile_review_path": "qa/review.json",
+        "tile_ok": false,
+        "final_atlas_path": "",
+        "composed": false
+      }
+    }
+  ]
+}

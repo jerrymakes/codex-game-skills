@@ -1,0 +1,311 @@
+{
+  "ok": true,
+  "spec_path": "tileset_spec.json",
+  "summary": {
+    "hard_failures": 0,
+    "warnings": 0,
+    "tile_count": 12
+  },
+  "tiles": [
+    {
+      "id": "soil_plain_light",
+      "label": "light bare soil tile",
+      "tile_path": "tiles/soil_plain_light.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 3.5625,
+        "top_bottom": 3.1796875
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_plain_dark",
+      "label": "dark bare soil tile",
+      "tile_path": "tiles/soil_plain_dark.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 2.67578125,
+        "top_bottom": 2.51171875
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_hoed_dry_a",
+      "label": "hoed dry soil variant A",
+      "tile_path": "tiles/soil_hoed_dry_a.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 5.26953125,
+        "top_bottom": 13.31640625
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_hoed_dry_b",
+      "label": "hoed dry soil variant B",
+      "tile_path": "tiles/soil_hoed_dry_b.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 7.51953125,
+        "top_bottom": 5.63671875
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_hoed_watered_a",
+      "label": "hoed watered soil variant A",
+      "tile_path": "tiles/soil_hoed_watered_a.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.33203125,
+        "top_bottom": 2.4765625
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_hoed_watered_b",
+      "label": "hoed watered soil variant B",
+      "tile_path": "tiles/soil_hoed_watered_b.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.74609375,
+        "top_bottom": 2.23828125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_fertilized_dry_a",
+      "label": "fertilized dry soil variant A",
+      "tile_path": "tiles/soil_fertilized_dry_a.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 3.98046875,
+        "top_bottom": 4.17578125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_fertilized_dry_b",
+      "label": "fertilized dry soil variant B",
+      "tile_path": "tiles/soil_fertilized_dry_b.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.4765625,
+        "top_bottom": 3.34375
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_fertilized_watered_a",
+      "label": "fertilized watered soil variant A",
+      "tile_path": "tiles/soil_fertilized_watered_a.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 3.70703125,
+        "top_bottom": 3.21875
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_fertilized_watered_b",
+      "label": "fertilized watered soil variant B",
+      "tile_path": "tiles/soil_fertilized_watered_b.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.62890625,
+        "top_bottom": 3.15625
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_path_worn",
+      "label": "worn walked-on soil tile",
+      "tile_path": "tiles/soil_path_worn.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 3.94921875,
+        "top_bottom": 5.51953125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "soil_transition_soft",
+      "label": "soft transition soil tile",
+      "tile_path": "tiles/soil_transition_soft.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.7890625,
+        "top_bottom": 3.921875
+      },
+      "seam_status": "ok",
+      "issues": []
+    }
+  ]
+}

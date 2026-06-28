@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "spec_path": "tileset_spec.json",
+  "input_path": "decoded/atlas-candidate.png",
+  "candidate_size_px": {
+    "width": 1448,
+    "height": 1086
+  },
+  "fitted_crop_box": {
+    "left": 0,
+    "top": 0,
+    "right": 1448,
+    "bottom": 1086
+  },
+  "fitted_grid_size_px": {
+    "width": 1448,
+    "height": 1086
+  },
+  "derived_cell_size_px": {
+    "width": 362,
+    "height": 362
+  },
+  "geometry": {
+    "expected_atlas_aspect": 1.333333,
+    "actual_atlas_aspect": 1.333333,
+    "atlas_aspect_error": 0.0,
+    "expected_cell_aspect": 1.0,
+    "actual_cell_aspect": 1.0,
+    "cell_aspect_error": 0.0,
+    "atlas_aspect_tolerance": 0.2,
+    "cell_aspect_tolerance": 0.2
+  },
+  "issues": []
+}

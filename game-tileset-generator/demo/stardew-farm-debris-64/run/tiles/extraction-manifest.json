@@ -1,0 +1,358 @@
+{
+  "input_path": "decoded/atlas-candidate.png",
+  "spec_path": "tileset_spec.json",
+  "candidate_size_px": {
+    "width": 1448,
+    "height": 1086
+  },
+  "fitted_crop_box": {
+    "left": 0,
+    "top": 0,
+    "right": 1448,
+    "bottom": 1086
+  },
+  "geometry_check": {
+    "expected_atlas_aspect": 1.333333,
+    "actual_atlas_aspect": 1.333333,
+    "atlas_aspect_error": 0.0,
+    "expected_cell_aspect": 1.0,
+    "actual_cell_aspect": 1.0,
+    "cell_aspect_error": 0.0,
+    "atlas_aspect_tolerance": 0.2,
+    "cell_aspect_tolerance": 0.2
+  },
+  "fitted_grid_size_px": {
+    "width": 1448,
+    "height": 1086
+  },
+  "derived_cell_size_px": {
+    "width": 362,
+    "height": 362
+  },
+  "tiles": [
+    {
+      "id": "weed_clump_a",
+      "label": "small weed clump variant A",
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 0,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/weed_clump_a.png"
+    },
+    {
+      "id": "weed_clump_b",
+      "label": "small weed clump variant B",
+      "origin": {
+        "x": 1,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 362,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/weed_clump_b.png"
+    },
+    {
+      "id": "weed_clump_c",
+      "label": "taller weed clump variant C",
+      "origin": {
+        "x": 2,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 724,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/weed_clump_c.png"
+    },
+    {
+      "id": "twig_small_a",
+      "label": "thin twig variant A",
+      "origin": {
+        "x": 3,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 1086,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/twig_small_a.png"
+    },
+    {
+      "id": "twig_small_b",
+      "label": "thin twig variant B",
+      "origin": {
+        "x": 0,
+        "y": 1
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 0,
+        "y": 362,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/twig_small_b.png"
+    },
+    {
+      "id": "branch_dry_a",
+      "label": "dry branch variant A",
+      "origin": {
+        "x": 1,
+        "y": 1
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 362,
+        "y": 362,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/branch_dry_a.png"
+    },
+    {
+      "id": "branch_dry_b",
+      "label": "dry branch variant B",
+      "origin": {
+        "x": 2,
+        "y": 1
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 724,
+        "y": 362,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/branch_dry_b.png"
+    },
+    {
+      "id": "stone_small_a",
+      "label": "small stone variant A",
+      "origin": {
+        "x": 3,
+        "y": 1
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 1086,
+        "y": 362,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/stone_small_a.png"
+    },
+    {
+      "id": "stone_small_b",
+      "label": "small stone variant B",
+      "origin": {
+        "x": 0,
+        "y": 2
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 0,
+        "y": 724,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/stone_small_b.png"
+    },
+    {
+      "id": "stone_medium_a",
+      "label": "medium stone variant A",
+      "origin": {
+        "x": 1,
+        "y": 2
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 362,
+        "y": 724,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/stone_medium_a.png"
+    },
+    {
+      "id": "fiber_patch_a",
+      "label": "harvestable fiber grass patch variant A",
+      "origin": {
+        "x": 2,
+        "y": 2
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 724,
+        "y": 724,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/fiber_patch_a.png"
+    },
+    {
+      "id": "mixed_debris_a",
+      "label": "mixed grass and pebble debris variant A",
+      "origin": {
+        "x": 3,
+        "y": 2
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 1086,
+        "y": 724,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 0,
+        "max": 255
+      },
+      "output_path": "tiles/mixed_debris_a.png"
+    }
+  ]
+}

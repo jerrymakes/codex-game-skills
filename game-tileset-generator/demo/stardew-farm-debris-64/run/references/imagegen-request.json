@@ -1,0 +1,29 @@
+{
+  "spec_path": "tileset_spec.json",
+  "view": "top-down",
+  "atlas_content": "placed-object",
+  "layout_style": "partial",
+  "layout_preset": "interior-basic",
+  "tile_size": 64,
+  "grid": {
+    "columns": 4,
+    "rows": 3
+  },
+  "expected_atlas_aspect": 1.3333333333333333,
+  "expected_cell_aspect": 1.0,
+  "positive_prompt": "Generate one game tileset atlas as a single structured sheet.\nAtlas pixel style: partial.\nGameplay view: top-down.\nAtlas content type: placed-object.\nUse a perfectly flat solid #FF00FF chroma-key background around and between objects where transparency is required.\nDo not use #FF00FF inside the artwork itself.\nDo not tint anti-aliased edges, semi-transparent edge pixels, or contact shadows with the chroma-key color.\nKeep object edge colors neutral or true to the material, not magenta-fringed.\nUse a 4 by 3 grid with 64x64 logical tiles.\nThe whole atlas must read as a 4 by 3 sheet of square cells, with a wide landscape aspect ratio that matches the grid.\nKeep each object smaller than the full tile area so empty transparent space remains around it.\nDo not make partial objects fill the entire tile cell edge-to-edge.\nDo not generate a square canvas, portrait canvas, or vertically stretched tile sheet for this atlas.\nDo not copy any rounded frame or decorative outer border from the layout guide.\nTreat this as an engine-facing tileset atlas, not a showcase image or presentation board.\nKeep every object inside its assigned footprint.\nDo not add labels, text, UI, borders, guide marks, or extra cells.\n\nAtlas objects in reading order:\n- weed_clump_a: small weed clump variant A, role foliage (foliage or plant element), footprint 1x1 tile(s), origin (0, 0), pixel mode partial, non-repeatable.\n- weed_clump_b: small weed clump variant B, role foliage (foliage or plant element), footprint 1x1 tile(s), origin (1, 0), pixel mode partial, non-repeatable.\n- weed_clump_c: taller weed clump variant C, role foliage (foliage or plant element), footprint 1x1 tile(s), origin (2, 0), pixel mode partial, non-repeatable.\n- twig_small_a: thin twig variant A, role prop (small environmental prop), footprint 1x1 tile(s), origin (3, 0), pixel mode partial, non-repeatable.\n- twig_small_b: thin twig variant B, role prop (small environmental prop), footprint 1x1 tile(s), origin (0, 1), pixel mode partial, non-repeatable.\n- branch_dry_a: dry branch variant A, role prop (small environmental prop), footprint 1x1 tile(s), origin (1, 1), pixel mode partial, non-repeatable.\n- branch_dry_b: dry branch variant B, role prop (small environmental prop), footprint 1x1 tile(s), origin (2, 1), pixel mode partial, non-repeatable.\n- stone_small_a: small stone variant A, role prop (small environmental prop), footprint 1x1 tile(s), origin (3, 1), pixel mode partial, non-repeatable.\n- stone_small_b: small stone variant B, role prop (small environmental prop), footprint 1x1 tile(s), origin (0, 2), pixel mode partial, non-repeatable.\n- stone_medium_a: medium stone variant A, role prop (small environmental prop), footprint 1x1 tile(s), origin (1, 2), pixel mode partial, non-repeatable.\n- fiber_patch_a: harvestable fiber grass patch variant A, role foliage (foliage or plant element), footprint 1x1 tile(s), origin (2, 2), pixel mode partial, non-repeatable.\n- mixed_debris_a: mixed grass and pebble debris variant A, role prop (small environmental prop), footprint 1x1 tile(s), origin (3, 2), pixel mode partial, non-repeatable.\n\nPreserve clean grid alignment across the whole atlas.",
+  "negative_prompt": "Do not let artwork touch or cross outside the intended safe area.\nDo not make small-object cells read like full-cell filled surfaces unless explicitly intended.\nDo not spill artwork into neighboring cells or outside the assigned footprint.\nDo not remove the transparent space needed around smaller objects.\nDo not leave magenta fringe, purple spill, or chroma-key contamination on semi-transparent edges.\nDo not anti-alias object edges against the chroma-key background color.\nDo not add text, labels, grid marks, shadows outside cells, extra decoration, or any rounded outer frame.\nDo not merge separate objects into one continuous filled sheet.",
+  "reference_images": [
+    {
+      "path": "layout-guide.png",
+      "role": "layout-guide",
+      "usage": "layout-only",
+      "required": true
+    }
+  ],
+  "generator": {
+    "tool": "$imagegen",
+    "mode": "single-atlas-job",
+    "requires_layout_reference": true
+  }
+}

@@ -8,9 +8,9 @@ Each skill is self-contained. Skill-specific workflow details, requirements, beh
 
 ## Skills
 
-| Name | Description | Path |
-| --- | --- | --- |
-| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` |
+| Name | Description | Path | Demo |
+| --- | --- | --- | --- |
+| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` | [Farm Soil](./game-tileset-generator/demo/stardew-farm-soil-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
 
 ## Install
 

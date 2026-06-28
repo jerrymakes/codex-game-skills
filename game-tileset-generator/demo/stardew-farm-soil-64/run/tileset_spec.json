@@ -1,0 +1,210 @@
+{
+  "sheet": {
+    "atlas_content": "terrain",
+    "view": "top-down",
+    "layout_preset": "terrain-basic",
+    "layout_style": "full",
+    "guide_outer_frame": false,
+    "tile_size": 64,
+    "columns": 4,
+    "rows": 3,
+    "spacing": 0,
+    "margin": 0,
+    "background": "transparent",
+    "chroma_key": "#FF00FF"
+  },
+  "objects": [
+    {
+      "id": "soil_plain_light",
+      "label": "light bare soil tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "soil_plain_dark",
+      "label": "dark bare soil tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "id": "soil_hoed_dry_a",
+      "label": "hoed dry soil variant A",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    {
+      "id": "soil_hoed_dry_b",
+      "label": "hoed dry soil variant B",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 3,
+        "y": 0
+      }
+    },
+    {
+      "id": "soil_hoed_watered_a",
+      "label": "hoed watered soil variant A",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 0,
+        "y": 1
+      }
+    },
+    {
+      "id": "soil_hoed_watered_b",
+      "label": "hoed watered soil variant B",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "soil_fertilized_dry_a",
+      "label": "fertilized dry soil variant A",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 2,
+        "y": 1
+      }
+    },
+    {
+      "id": "soil_fertilized_dry_b",
+      "label": "fertilized dry soil variant B",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 3,
+        "y": 1
+      }
+    },
+    {
+      "id": "soil_fertilized_watered_a",
+      "label": "fertilized watered soil variant A",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 0,
+        "y": 2
+      }
+    },
+    {
+      "id": "soil_fertilized_watered_b",
+      "label": "fertilized watered soil variant B",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
+      "id": "soil_path_worn",
+      "label": "worn walked-on soil tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    {
+      "id": "soil_transition_soft",
+      "label": "soft transition soil tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "repeatability": "both",
+      "origin": {
+        "x": 3,
+        "y": 2
+      }
+    }
+  ],
+  "constraints": {
+    "fixed_grid": true,
+    "no_overlap": true,
+    "no_out_of_bounds": true,
+    "no_cross_footprint_drawing": true
+  },
+  "qa": {
+    "check_sheet_dimensions": true,
+    "check_object_bounds": true,
+    "check_empty_objects": true,
+    "check_repeat_seams": true
+  }
+}

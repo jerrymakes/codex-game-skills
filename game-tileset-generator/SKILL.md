@@ -28,10 +28,19 @@ If any dependency is missing:
 
 ## Spec Confirmation
 
-Turn the user request into a spec draft, then normalize it into `tileset_spec.json`.
+Turn the user request into a proposed spec, then normalize the approved version into `tileset_spec.json`.
 
 Do not ask the user to define the whole spec from scratch.
-Start from the user request, infer a reasonable draft, then ask the user to confirm or adjust it.
+Start from the user request, infer a reasonable proposal, then ask the user to confirm or adjust it.
+
+Confirmation gate:
+- do not start `prepare_tileset_spec.py`, `prepare_tileset_run.py`, generation, or any downstream script until the user has explicitly approved the full proposed spec
+- if the user changes one or more items, restate the full current proposal and wait again
+- a partial adjustment is not final approval by itself
+- only proceed after the user gives a clear affirmative go-ahead that means the spec is approved and generation may start
+- examples: `go ahead`, `looks good, generate it`, `approved, start generation`
+- if the reply does not clearly mean approval to start, the flow is still in confirmation
+- before asking for approval, include your recommendation for each key item and explain the tradeoff briefly
 
 Confirm these items:
 - tile size
@@ -84,7 +93,7 @@ Hard constraints:
 The run directory stores one execution of the flow.
 
 Storage rules:
-- default run directory: `./.codex-artifacts/game-tileset-generator/<run-name>/`
+- default run directory: `./game-tileset-generator/<run-name>`
 - allow user-specified run directories
 - do not default to the installed skill directory
 - keep all stage artifacts inside the run directory
@@ -124,72 +133,77 @@ Input: user request, active environment
 Output: confirmed execution conditions
 Action: stop early if `imagegen`, Python, or Pillow is missing.
 
-2. Turn the user request into a spec draft.
+2. Turn the user request into a proposed spec.
 Input: user request
-Output: AI-authored spec draft
-Action: infer a reasonable draft first, then ask the user to confirm or adjust the key atlas settings and atlas content.
+Output: AI-authored proposed spec
+Action: infer a reasonable proposal first, give recommendations for the key atlas settings and atlas content, then ask the user to confirm or adjust them.
 
-3. Normalize the spec draft into `tileset_spec.json`.
-Input: AI-authored spec draft
+3. Wait for explicit user approval of the full proposed spec.
+Input: AI-authored proposed spec, user feedback
+Output: approved spec
+Action: if the user changes any item, restate the full current proposal and wait again. Do not start scripts yet. Only a clear affirmative go-ahead counts as approval.
+
+4. Normalize the approved spec into `tileset_spec.json`.
+Input: approved spec
 Output: `tileset_spec.json`
 Script: `scripts/prepare_tileset_spec.py`
 Action: reject invalid combinations before any generation starts.
 
-4. Prepare the run directory.
+5. Prepare the run directory.
 Input: `tileset_spec.json`, optional `request.json`
 Output: run folder, `imagegen-jobs.json`
 Script: `scripts/prepare_tileset_run.py`
 Action: create the standard run structure and write the files later stages expect.
 
-5. Derive generation references from the spec.
+6. Derive generation references from the spec.
 Input: `tileset_spec.json`
 Output: `references/layout-guide.png`, `references/imagegen-request.json`
 Scripts: `scripts/render_layout_guide.py`, `scripts/render_generation_prompt.py`, `scripts/prepare_imagegen_handoff.py`
 Action: keep layout, prompt, and imagegen request aligned to the same spec.
 
-6. Dispatch generation work.
+7. Dispatch generation work.
 Input: `imagegen-jobs.json`, `references/imagegen-request.json`, `references/layout-guide.png`
 Output: one or more worker outputs
 Tool: `$imagegen`
-Action: use the layout guide as a real reference image, not just a file path mention.
+Action: use the layout guide as a real reference image, not just a file path mention. After choosing one output, return its local path immediately.
 
-7. Record the selected generation output into the run directory.
-Input: selected worker image
+8. Record the selected generation output into the run directory.
+Input: selected worker image path
 Output: updated `imagegen-jobs.json`, `decoded/atlas-candidate.png`
 Script: `scripts/complete_tileset_job.py`
-Action: copy the chosen result into the standard decoded path before postprocess continues. Use `--run-postprocess` when the parent wants one command for record + serialized postprocess.
+Action: copy the chosen result into the standard decoded path immediately after generation, then continue. Use `--run-postprocess` when the parent wants one command for record + serialized postprocess.
 
-8. Run deterministic postprocess in one serialized call.
+9. Run deterministic postprocess in one serialized call.
 Input: `tileset_spec.json`, `decoded/atlas-candidate.png`
 Output: `qa/candidate-review.json`, `tiles/*.png`, `qa/review.json`, `final/atlas.png`
 Script: `scripts/process_tileset_run.py`
 Action: this is the only parent entrypoint for postprocess. Do not start candidate validation, extraction, tile validation, or composition as separate parallel commands.
 
-9. Validate the generated candidate before extraction.
+10. Validate the generated candidate before extraction.
 Input: `tileset_spec.json`, `decoded/atlas-candidate.png`
 Output: `qa/candidate-review.json`
 Script: `scripts/validate_full_candidate.py` or `scripts/validate_partial_candidate.py`
 Action: reject candidates whose overall atlas geometry does not match the spec closely enough.
 
-10. Extract normalized tiles from the accepted candidate.
+11. Extract normalized tiles from the accepted candidate.
 Input: `tileset_spec.json`, `decoded/atlas-candidate.png`
 Output: `tiles/*.png`, extraction manifest
 Script: `scripts/extract_full_tiles.py` or `scripts/extract_partial_tiles.py`
 Action: crop by spec layout, then normalize each object footprint into its target size.
 
-11. Validate extracted tiles.
+12. Validate extracted tiles.
 Input: `tileset_spec.json`, `tiles/*.png`
 Output: `qa/review.json`
 Script: `scripts/validate_full_atlas.py` or `scripts/validate_partial_atlas.py`
 Action: run deterministic tile checks before atlas composition.
 
-12. Compose the final atlas.
+13. Compose the final atlas.
 Input: `tileset_spec.json`, validated tiles
 Output: `final/atlas.png`
 Script: `scripts/compose_full_atlas.py` or `scripts/compose_partial_atlas.py`
 Action: compose only after validation passes.
 
-13. Deliver or iterate.
+14. Deliver or iterate.
 Input: `qa/candidate-review.json`, `qa/review.json`, `final/atlas.png`
 Output: finished atlas or another generation attempt
 Action: if QA fails, revise the spec or regenerate; if QA passes, deliver the final atlas and run artifacts.
@@ -279,6 +293,7 @@ Atlas-wide rules:
 - preserve safe area around smaller objects
 - keep artwork inside the assigned footprint
 - convert the chroma-key background to transparency during extraction
+- remove chroma spill from semi-transparent edges during extraction
 
 Prompt derivation rules:
 - generate prompt text from the spec
@@ -304,3 +319,4 @@ Current `partial` QA checks:
 - expected tile size
 - non-empty visible pixels
 - transparency preserved after chroma-key removal
+- no chroma-key fringe or purple spill on semi-transparent edges

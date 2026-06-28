@@ -8,9 +8,9 @@
 
 ## Skills
 
-| Name | Description | 路径 |
-| --- | --- | --- |
-| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` |
+| Name | Description | 路径 | Demo |
+| --- | --- | --- | --- |
+| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` | [Farm Soil](./game-tileset-generator/demo/stardew-farm-soil-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
 
 ## 安装
 
