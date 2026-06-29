@@ -2,15 +2,15 @@
 
 [English](./README.md) | 简体中文
 
-这个仓库是我个人用来探索和沉淀游戏相关 Codex Skills 的地方。
+这个仓库分享了我在尝试用 Codex 开发游戏时制作的一系列 skills。
 
 每个 skill 都是自包含的。具体到某个 skill 的 workflow、环境要求、行为说明、demo 和参考资料，应该进入对应 skill 目录查看。
 
 ## Skills
 
-| Name | Description | 路径 | Demo |
+| Name | 描述 | 路径 | Demo |
 | --- | --- | --- | --- |
-| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` | [Farm Soil](./game-tileset-generator/demo/stardew-farm-soil-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
+| `game-tileset-generator` | 通过规格定义、布局引导生成和可复现的后处理流程，将用户需求转化为游戏瓦片图图集。 | [./game-tileset-generator](./game-tileset-generator/) | [Ground Mix](./game-tileset-generator/demo/stardew-ground-mix-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
 
 ## 安装
 

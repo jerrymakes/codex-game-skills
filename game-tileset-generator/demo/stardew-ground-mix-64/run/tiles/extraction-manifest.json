@@ -31,8 +31,8 @@
   },
   "tiles": [
     {
-      "id": "soil_plain_light",
-      "label": "light bare soil tile",
+      "id": "grass_light",
+      "label": "light grass tile",
       "origin": {
         "x": 0,
         "y": 0
@@ -44,6 +44,98 @@
       "source_crop_px": {
         "x": 0,
         "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "output_path": "tiles/grass_light.png"
+    },
+    {
+      "id": "grass_dark",
+      "label": "dark grass tile",
+      "origin": {
+        "x": 1,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 362,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "output_path": "tiles/grass_dark.png"
+    },
+    {
+      "id": "grass_worn",
+      "label": "lightly worn grass tile",
+      "origin": {
+        "x": 2,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 724,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "output_path": "tiles/grass_worn.png"
+    },
+    {
+      "id": "grass_patchy",
+      "label": "patchy grass tile",
+      "origin": {
+        "x": 3,
+        "y": 0
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 1086,
+        "y": 0,
+        "width": 362,
+        "height": 362
+      },
+      "normalized_size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "output_path": "tiles/grass_patchy.png"
+    },
+    {
+      "id": "soil_plain_light",
+      "label": "light bare soil tile",
+      "origin": {
+        "x": 0,
+        "y": 1
+      },
+      "span": {
+        "w": 1,
+        "h": 1
+      },
+      "source_crop_px": {
+        "x": 0,
+        "y": 362,
         "width": 362,
         "height": 362
       },
@@ -58,7 +150,7 @@
       "label": "dark bare soil tile",
       "origin": {
         "x": 1,
-        "y": 0
+        "y": 1
       },
       "span": {
         "w": 1,
@@ -66,7 +158,7 @@
       },
       "source_crop_px": {
         "x": 362,
-        "y": 0,
+        "y": 362,
         "width": 362,
         "height": 362
       },
@@ -81,7 +173,7 @@
       "label": "hoed dry soil variant A",
       "origin": {
         "x": 2,
-        "y": 0
+        "y": 1
       },
       "span": {
         "w": 1,
@@ -89,7 +181,7 @@
       },
       "source_crop_px": {
         "x": 724,
-        "y": 0,
+        "y": 362,
         "width": 362,
         "height": 362
       },
@@ -104,7 +196,7 @@
       "label": "hoed dry soil variant B",
       "origin": {
         "x": 3,
-        "y": 0
+        "y": 1
       },
       "span": {
         "w": 1,
@@ -112,7 +204,7 @@
       },
       "source_crop_px": {
         "x": 1086,
-        "y": 0,
+        "y": 362,
         "width": 362,
         "height": 362
       },
@@ -127,7 +219,7 @@
       "label": "hoed watered soil variant A",
       "origin": {
         "x": 0,
-        "y": 1
+        "y": 2
       },
       "span": {
         "w": 1,
@@ -135,7 +227,7 @@
       },
       "source_crop_px": {
         "x": 0,
-        "y": 362,
+        "y": 724,
         "width": 362,
         "height": 362
       },
@@ -150,7 +242,7 @@
       "label": "hoed watered soil variant B",
       "origin": {
         "x": 1,
-        "y": 1
+        "y": 2
       },
       "span": {
         "w": 1,
@@ -158,7 +250,7 @@
       },
       "source_crop_px": {
         "x": 362,
-        "y": 362,
+        "y": 724,
         "width": 362,
         "height": 362
       },
@@ -169,100 +261,8 @@
       "output_path": "tiles/soil_hoed_watered_b.png"
     },
     {
-      "id": "soil_fertilized_dry_a",
-      "label": "fertilized dry soil variant A",
-      "origin": {
-        "x": 2,
-        "y": 1
-      },
-      "span": {
-        "w": 1,
-        "h": 1
-      },
-      "source_crop_px": {
-        "x": 724,
-        "y": 362,
-        "width": 362,
-        "height": 362
-      },
-      "normalized_size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "output_path": "tiles/soil_fertilized_dry_a.png"
-    },
-    {
-      "id": "soil_fertilized_dry_b",
-      "label": "fertilized dry soil variant B",
-      "origin": {
-        "x": 3,
-        "y": 1
-      },
-      "span": {
-        "w": 1,
-        "h": 1
-      },
-      "source_crop_px": {
-        "x": 1086,
-        "y": 362,
-        "width": 362,
-        "height": 362
-      },
-      "normalized_size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "output_path": "tiles/soil_fertilized_dry_b.png"
-    },
-    {
-      "id": "soil_fertilized_watered_a",
-      "label": "fertilized watered soil variant A",
-      "origin": {
-        "x": 0,
-        "y": 2
-      },
-      "span": {
-        "w": 1,
-        "h": 1
-      },
-      "source_crop_px": {
-        "x": 0,
-        "y": 724,
-        "width": 362,
-        "height": 362
-      },
-      "normalized_size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "output_path": "tiles/soil_fertilized_watered_a.png"
-    },
-    {
-      "id": "soil_fertilized_watered_b",
-      "label": "fertilized watered soil variant B",
-      "origin": {
-        "x": 1,
-        "y": 2
-      },
-      "span": {
-        "w": 1,
-        "h": 1
-      },
-      "source_crop_px": {
-        "x": 362,
-        "y": 724,
-        "width": 362,
-        "height": 362
-      },
-      "normalized_size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "output_path": "tiles/soil_fertilized_watered_b.png"
-    },
-    {
-      "id": "soil_path_worn",
-      "label": "worn walked-on soil tile",
+      "id": "field_transition_soft",
+      "label": "soft grass to soil transition tile",
       "origin": {
         "x": 2,
         "y": 2
@@ -281,11 +281,11 @@
         "width": 64,
         "height": 64
       },
-      "output_path": "tiles/soil_path_worn.png"
+      "output_path": "tiles/field_transition_soft.png"
     },
     {
-      "id": "soil_transition_soft",
-      "label": "soft transition soil tile",
+      "id": "field_path_worn",
+      "label": "worn field path tile",
       "origin": {
         "x": 3,
         "y": 2
@@ -304,7 +304,7 @@
         "width": 64,
         "height": 64
       },
-      "output_path": "tiles/soil_transition_soft.png"
+      "output_path": "tiles/field_path_worn.png"
     }
   ]
 }

@@ -9,13 +9,49 @@
   },
   "objects": [
     {
+      "id": "grass_light",
+      "label": "light grass tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": { "w": 1, "h": 1 },
+      "repeatability": "both",
+      "origin": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "grass_dark",
+      "label": "dark grass tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": { "w": 1, "h": 1 },
+      "repeatability": "both",
+      "origin": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "grass_worn",
+      "label": "lightly worn grass tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": { "w": 1, "h": 1 },
+      "repeatability": "both",
+      "origin": { "x": 2, "y": 0 }
+    },
+    {
+      "id": "grass_patchy",
+      "label": "patchy grass tile",
+      "role": "ground",
+      "pixel_mode": "full",
+      "span": { "w": 1, "h": 1 },
+      "repeatability": "both",
+      "origin": { "x": 3, "y": 0 }
+    },
+    {
       "id": "soil_plain_light",
       "label": "light bare soil tile",
       "role": "ground",
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 0, "y": 0 }
+      "origin": { "x": 0, "y": 1 }
     },
     {
       "id": "soil_plain_dark",
@@ -24,7 +60,7 @@
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 1, "y": 0 }
+      "origin": { "x": 1, "y": 1 }
     },
     {
       "id": "soil_hoed_dry_a",
@@ -33,7 +69,7 @@
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 2, "y": 0 }
+      "origin": { "x": 2, "y": 1 }
     },
     {
       "id": "soil_hoed_dry_b",
@@ -42,7 +78,7 @@
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 3, "y": 0 }
+      "origin": { "x": 3, "y": 1 }
     },
     {
       "id": "soil_hoed_watered_a",
@@ -51,7 +87,7 @@
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 0, "y": 1 }
+      "origin": { "x": 0, "y": 2 }
     },
     {
       "id": "soil_hoed_watered_b",
@@ -60,47 +96,11 @@
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
       "repeatability": "both",
-      "origin": { "x": 1, "y": 1 }
-    },
-    {
-      "id": "soil_fertilized_dry_a",
-      "label": "fertilized dry soil variant A",
-      "role": "ground",
-      "pixel_mode": "full",
-      "span": { "w": 1, "h": 1 },
-      "repeatability": "both",
-      "origin": { "x": 2, "y": 1 }
-    },
-    {
-      "id": "soil_fertilized_dry_b",
-      "label": "fertilized dry soil variant B",
-      "role": "ground",
-      "pixel_mode": "full",
-      "span": { "w": 1, "h": 1 },
-      "repeatability": "both",
-      "origin": { "x": 3, "y": 1 }
-    },
-    {
-      "id": "soil_fertilized_watered_a",
-      "label": "fertilized watered soil variant A",
-      "role": "ground",
-      "pixel_mode": "full",
-      "span": { "w": 1, "h": 1 },
-      "repeatability": "both",
-      "origin": { "x": 0, "y": 2 }
-    },
-    {
-      "id": "soil_fertilized_watered_b",
-      "label": "fertilized watered soil variant B",
-      "role": "ground",
-      "pixel_mode": "full",
-      "span": { "w": 1, "h": 1 },
-      "repeatability": "both",
       "origin": { "x": 1, "y": 2 }
     },
     {
-      "id": "soil_path_worn",
-      "label": "worn walked-on soil tile",
+      "id": "field_transition_soft",
+      "label": "soft grass to soil transition tile",
       "role": "ground",
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },
@@ -108,8 +108,8 @@
       "origin": { "x": 2, "y": 2 }
     },
     {
-      "id": "soil_transition_soft",
-      "label": "soft transition soil tile",
+      "id": "field_path_worn",
+      "label": "worn field path tile",
       "role": "ground",
       "pixel_mode": "full",
       "span": { "w": 1, "h": 1 },

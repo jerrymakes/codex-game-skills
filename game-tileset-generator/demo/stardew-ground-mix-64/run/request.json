@@ -1,0 +1,6 @@
+{
+  "project": "stardew-ground-mix-64",
+  "style_target": "Stardew Valley inspired mixed ground terrain atlas",
+  "summary": "Generate a top-down pixel-art terrain atlas for farm ground surfaces including grass, soil, hoed land, watered land, path wear, and soft field transitions.",
+  "user_request_language": "zh-CN"
+}

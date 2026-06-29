@@ -2,7 +2,7 @@
 
 English | [简体中文](./README.zh-CN.md)
 
-This repository is my personal exploration space for building up game-related Codex skills.
+This repository shares a series of skills I created while experimenting with game development using Codex.
 
 Each skill is self-contained. Skill-specific workflow details, requirements, behaviors, demos, and references should be read inside that skill directory.
 
@@ -10,7 +10,7 @@ Each skill is self-contained. Skill-specific workflow details, requirements, beh
 
 | Name | Description | Path | Demo |
 | --- | --- | --- | --- |
-| `game-tileset-generator` | Turn user intent into atlas-based game tilesets through a production spec, layout-guided image generation, and deterministic postprocess stages. | `./game-tileset-generator` | [Farm Soil](./game-tileset-generator/demo/stardew-farm-soil-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
+| `game-tileset-generator` | Turns a user request into an atlas-based game tileset using a production spec, layout-guided generation, and deterministic postprocessing. | [./game-tileset-generator](./game-tileset-generator/) | [Ground Mix](./game-tileset-generator/demo/stardew-ground-mix-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
 
 ## Install
 

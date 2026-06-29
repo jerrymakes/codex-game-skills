@@ -8,6 +8,106 @@
   },
   "tiles": [
     {
+      "id": "grass_light",
+      "label": "light grass tile",
+      "tile_path": "tiles/grass_light.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.4375,
+        "top_bottom": 4.70703125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "grass_dark",
+      "label": "dark grass tile",
+      "tile_path": "tiles/grass_dark.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 4.13671875,
+        "top_bottom": 4.89453125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "grass_worn",
+      "label": "lightly worn grass tile",
+      "tile_path": "tiles/grass_worn.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 6.82421875,
+        "top_bottom": 5.39453125
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
+      "id": "grass_patchy",
+      "label": "patchy grass tile",
+      "tile_path": "tiles/grass_patchy.png",
+      "size_px": {
+        "width": 64,
+        "height": 64
+      },
+      "alpha_extrema": {
+        "min": 255,
+        "max": 255
+      },
+      "repeatable": false,
+      "repeatability": "both",
+      "seam_checks": [
+        "left_right",
+        "top_bottom"
+      ],
+      "seam_diff": {
+        "left_right": 5.67578125,
+        "top_bottom": 6.65234375
+      },
+      "seam_status": "ok",
+      "issues": []
+    },
+    {
       "id": "soil_plain_light",
       "label": "light bare soil tile",
       "tile_path": "tiles/soil_plain_light.png",
@@ -26,8 +126,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 3.5625,
-        "top_bottom": 3.1796875
+        "left_right": 2.78515625,
+        "top_bottom": 3.76171875
       },
       "seam_status": "ok",
       "issues": []
@@ -51,8 +151,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 2.67578125,
-        "top_bottom": 2.51171875
+        "left_right": 3.11328125,
+        "top_bottom": 3.359375
       },
       "seam_status": "ok",
       "issues": []
@@ -76,8 +176,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 5.26953125,
-        "top_bottom": 13.31640625
+        "left_right": 5.99609375,
+        "top_bottom": 10.38671875
       },
       "seam_status": "ok",
       "issues": []
@@ -101,8 +201,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 7.51953125,
-        "top_bottom": 5.63671875
+        "left_right": 4.61328125,
+        "top_bottom": 9.390625
       },
       "seam_status": "ok",
       "issues": []
@@ -126,8 +226,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 4.33203125,
-        "top_bottom": 2.4765625
+        "left_right": 3.35546875,
+        "top_bottom": 9.19921875
       },
       "seam_status": "ok",
       "issues": []
@@ -151,16 +251,16 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 4.74609375,
-        "top_bottom": 2.23828125
+        "left_right": 3.7265625,
+        "top_bottom": 9.43359375
       },
       "seam_status": "ok",
       "issues": []
     },
     {
-      "id": "soil_fertilized_dry_a",
-      "label": "fertilized dry soil variant A",
-      "tile_path": "tiles/soil_fertilized_dry_a.png",
+      "id": "field_transition_soft",
+      "label": "soft grass to soil transition tile",
+      "tile_path": "tiles/field_transition_soft.png",
       "size_px": {
         "width": 64,
         "height": 64
@@ -176,16 +276,16 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 3.98046875,
-        "top_bottom": 4.17578125
+        "left_right": 7.4296875,
+        "top_bottom": 17.5078125
       },
       "seam_status": "ok",
       "issues": []
     },
     {
-      "id": "soil_fertilized_dry_b",
-      "label": "fertilized dry soil variant B",
-      "tile_path": "tiles/soil_fertilized_dry_b.png",
+      "id": "field_path_worn",
+      "label": "worn field path tile",
+      "tile_path": "tiles/field_path_worn.png",
       "size_px": {
         "width": 64,
         "height": 64
@@ -201,108 +301,8 @@
         "top_bottom"
       ],
       "seam_diff": {
-        "left_right": 4.4765625,
-        "top_bottom": 3.34375
-      },
-      "seam_status": "ok",
-      "issues": []
-    },
-    {
-      "id": "soil_fertilized_watered_a",
-      "label": "fertilized watered soil variant A",
-      "tile_path": "tiles/soil_fertilized_watered_a.png",
-      "size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "alpha_extrema": {
-        "min": 255,
-        "max": 255
-      },
-      "repeatable": false,
-      "repeatability": "both",
-      "seam_checks": [
-        "left_right",
-        "top_bottom"
-      ],
-      "seam_diff": {
-        "left_right": 3.70703125,
-        "top_bottom": 3.21875
-      },
-      "seam_status": "ok",
-      "issues": []
-    },
-    {
-      "id": "soil_fertilized_watered_b",
-      "label": "fertilized watered soil variant B",
-      "tile_path": "tiles/soil_fertilized_watered_b.png",
-      "size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "alpha_extrema": {
-        "min": 255,
-        "max": 255
-      },
-      "repeatable": false,
-      "repeatability": "both",
-      "seam_checks": [
-        "left_right",
-        "top_bottom"
-      ],
-      "seam_diff": {
-        "left_right": 4.62890625,
-        "top_bottom": 3.15625
-      },
-      "seam_status": "ok",
-      "issues": []
-    },
-    {
-      "id": "soil_path_worn",
-      "label": "worn walked-on soil tile",
-      "tile_path": "tiles/soil_path_worn.png",
-      "size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "alpha_extrema": {
-        "min": 255,
-        "max": 255
-      },
-      "repeatable": false,
-      "repeatability": "both",
-      "seam_checks": [
-        "left_right",
-        "top_bottom"
-      ],
-      "seam_diff": {
-        "left_right": 3.94921875,
-        "top_bottom": 5.51953125
-      },
-      "seam_status": "ok",
-      "issues": []
-    },
-    {
-      "id": "soil_transition_soft",
-      "label": "soft transition soil tile",
-      "tile_path": "tiles/soil_transition_soft.png",
-      "size_px": {
-        "width": 64,
-        "height": 64
-      },
-      "alpha_extrema": {
-        "min": 255,
-        "max": 255
-      },
-      "repeatable": false,
-      "repeatability": "both",
-      "seam_checks": [
-        "left_right",
-        "top_bottom"
-      ],
-      "seam_diff": {
-        "left_right": 4.7890625,
-        "top_bottom": 3.921875
+        "left_right": 3.44921875,
+        "top_bottom": 4.15234375
       },
       "seam_status": "ok",
       "issues": []
