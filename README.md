@@ -4,13 +4,32 @@ English | [简体中文](./README.zh-CN.md)
 
 This repository shares a series of skills I created while experimenting with game development using Codex.
 
-Each skill is self-contained. Skill-specific workflow details, requirements, behaviors, demos, and references should be read inside that skill directory.
-
 ## Skills
 
-| Name | Description | Path | Demo |
-| --- | --- | --- | --- |
-| `game-tileset-generator` | Turns a user request into an atlas-based game tileset using a production spec, layout-guided generation, and deterministic postprocessing. | [./game-tileset-generator](./game-tileset-generator/) | [Ground Mix](./game-tileset-generator/demo/stardew-ground-mix-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
+| Name | Path |
+| --- | --- |
+| `game-tileset-generator` | [./game-tileset-generator](./game-tileset-generator/) |
+
+### `game-tileset-generator`
+
+- Helps you refine and clarify your asset requirements.
+- Outputs game tilesets ready to import into tools like Tiled.
+- Reduces the manual cleanup and rework after GPT image generation.
+
+When to use it:
+- You have spent a long time looking for the right tileset.
+- You need tilesets but cannot draw them yourself.
+
+How to use it:
+- Describe the game asset you want.
+- The skill proposes a spec for you.
+- Review it and confirm.
+- The skill generates the final tileset.
+
+What you get:
+- `tileset_spec.json`: the approved spec
+- `references/layout-guide.png`: the generated layout guide
+- `final/atlas.png`: the final usable atlas
 
 ## Install
 

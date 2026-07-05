@@ -4,13 +4,32 @@
 
 这个仓库分享了我在尝试用 Codex 开发游戏时制作的一系列 skills。
 
-每个 skill 都是自包含的。具体到某个 skill 的 workflow、环境要求、行为说明、demo 和参考资料，应该进入对应 skill 目录查看。
-
 ## Skills
 
-| Name | 描述 | 路径 | Demo |
-| --- | --- | --- | --- |
-| `game-tileset-generator` | 通过规格定义、布局引导生成和可复现的后处理流程，将用户需求转化为游戏瓦片图图集。 | [./game-tileset-generator](./game-tileset-generator/) | [Ground Mix](./game-tileset-generator/demo/stardew-ground-mix-64/run/final/atlas.png), [Farm Debris](./game-tileset-generator/demo/stardew-farm-debris-64/run/final/atlas.png) |
+| Name | 路径 |
+| --- | --- |
+| `game-tileset-generator` | [./game-tileset-generator](./game-tileset-generator/) |
+
+### `game-tileset-generator`
+
+- 辅助你细化和明确素材生成需求
+- 直出游戏瓦片图，可导入 Tiled 等游戏开发工具
+- 降低 GPT 出图后大量手工整理和返工成本
+
+适合什么场景：
+- 找了很久找不到想要的瓦片图
+- 不会画瓦片图
+
+怎么用：
+- 描述你想要的游戏素材
+- skill 会生成建议
+- 等你确认
+- skill 会生成最终的瓦片图
+
+会产出什么：
+- `tileset_spec.json`：确认后的规格
+- `references/layout-guide.png`：生成参考布局图
+- `final/atlas.png`：最终可用图集 atlas
 
 ## 安装
 
